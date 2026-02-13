@@ -30,6 +30,32 @@ numbers = [5,3,6,1]
 
 // reduce → to combine all values into one result
 // numbers.reduce(() => {});        -------> SYNTAX
-let sum = numbers.reduce((total, n) => total + n, 0);
-console.log(sum);
+// let sum = numbers.reduce((total, n) => total + n, 0);
+// console.log(sum);
 
+
+
+// number.some(()=>{})             --------> SYNTAX
+// let marks = [78,50,90,20]
+// const result = marks.some((mark)=>{
+//     return mark>80
+// })
+// if(result){
+//     console.log("pass");
+// }
+// else{
+//     console.log("Fail");
+// }
+
+
+// number.every(()=>{})             --------> SYNTAX
+let marks = [78,50,90,20]
+const result = marks.every((mark)=>{
+    return mark>80
+})
+if(result){
+    console.log("pass");
+}
+else{
+    console.log("Fail");
+}
