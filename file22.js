@@ -44,19 +44,51 @@ const products = [
 ];
 
 const cart = [];
+let qty = 1;
 
 function addToCart(id) {
   const product = products.find(p => p.id === id);
 
-  if (product) {
+
     cart.push({
       ...product,
+      qty:1
     });
-  }
 }
+
+function increment(id) {
+  const product = products.find(p=>p.id===id);
+  cart.push({
+    ...product,
+    qty:qty+1
+
+  })
+}
+
 
 addToCart(1);
 addToCart(3);
 addToCart(5);
 
-console.log(cart);
+// console.log(cart);
+increment(1)
+increment(5)
+
+// console.log(cart);
+
+
+
+function placeOrder(){
+  let total = 0;
+  for(let i=0;i<cart.length;i++){
+    total += cart[i].price*cart[i].qty
+  }
+
+  const order = {
+    email: "john@gmail.com",
+    orderValue: total,
+    items: cart,
+  }
+  console.log(order)
+}
+placeOrder()
