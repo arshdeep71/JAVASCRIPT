@@ -6,7 +6,7 @@ const numbers = [10,20,30,40,50]
 
 
 // DESTRUCTURING NEW METHOD OF ES6 TO EXTRACT ARRAY ELEMENTS
-// const [n1,n2,...n3] = numbers
+// const [n1,n2] = numbers
 // console.log(n1);
 // console.log(n2);
 // console.log(n3);
