@@ -19,4 +19,7 @@ const number = [5,2,4,6,1,2];
 // console.log(number.indexOf(2));
 // console.log(number.lastIndexOf(2));
 
-console.log(number.includes(3));
+// console.log(number.includes(3));
+// console.log(number.includes(2));
+
+console.log(number.slice(1,5))
