@@ -1,81 +1,46 @@
-const students = [
-    { id: 1, name: "Arsh", attendance: 90, score: 80 },
-    { id: 2, name: "Ayush", attendance: 70, score: 90 },
-]
-
-function getStudent(id) {
-    return new Promise((res, rej) => {
-        setTimeout(() => {
-            const found = students.find((std)=> std.id===id);
-            if(found) res("Student Info")
-            else rej("Not Found")
-            // res(std)
-            // const userObj = {
-            //     name: "Arshdeep",
-            //     email: "arshdeepsingh@gmail.com",
-            //     age: 20
-            // }
-            // res(userObj)
-        }, 3000)
-    })
-
+function getStudentInfo() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const userObj = {
+        name: "John",
+        email: "john@gmail.com",
+        age: 21,
+      };
+      resolve(userObj);
+    }, 2000);
+  });
 }
 
-function getAttendanceInfo(id) {
-    return new Promise((res) => {
-        setTimeout(() => {
-            const attendance = students.find((std)=> std.id== id);
-            if(attendance) {
-                console.log(attendance)
-                res(attendance)
-            }
-            
-            // console.log(students.id.attendance)
-        }, 1000)
-    })
+function getExamInfo() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Exam Info Resolved");
+    }, 3000);
+  });
 }
 
-function getExaminationInfo(id) {
-    return new Promise((res) => {
-        setTimeout(() => {
-            const student = 
-            res("Examination info resilved")
-        }, 2000)
-    })
+function getAttendanceInfo() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Attendance Info Resolved");
+    }, 1000);
+  });
 }
-
-
-
-// function displayStudent(user){
-//     console.log(user.name);
-// }
+function displayInfo({ name }) {
+  console.log(name);
+}
 
 async function main() {
-    try {
-        const studentID = 1;
-        // const result = await getStudent()  // after completed this then go to next line for one function
-        const result = await Promise.all([            //for many function 
-            getStudent(studentID),
-            getAttendanceInfo(studentID),
-            getExaminationInfo(studentID)
-        ])
-
-
-
-        displayStudent(result[0])
-        // result.foreach((a)=>{
-        //     console.log(a)
-        // })
-        console.log(result)
-        console.log("Program Completed Successfully")
-    } catch (err) {
-        console.log(err)
-    }
-
-
-
+  //   const result = await getStudentInfo();
+  const result = await Promise.all([
+    getStudentInfo(),
+    getAttendanceInfo(),
+    getExamInfo(),
+  ]);
+  console.log(result)
+//   displayInfo(result);
+  console.log("Student has been promoted");
 }
+main();
 
-main()
-//getStudent should return object name, email and age
-// file45.
+//getStudentInfo should return object name,email and age
