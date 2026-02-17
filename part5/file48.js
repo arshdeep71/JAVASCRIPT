@@ -4,4 +4,4 @@ const students = [
     { id: 3, name: "Varinder",s1: true , s2: true, s3: false},
 ];
 
-// if id is 1 > Arsh is absent 
+// if id is 1 > Arsh is absent
